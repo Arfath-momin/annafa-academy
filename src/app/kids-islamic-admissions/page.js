@@ -310,29 +310,46 @@ function Hero({ formRef }) {
 function About() {
   return (
     <section style={{ background: T.white, padding: `72px ${PAGE_X}` }}>
-      <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <FadeIn><Eyebrow>About the Program</Eyebrow></FadeIn>
-        <FadeIn delay={0.07}>
-          <SectionHeading>
-            Evening Madrasah<br />for <em style={{ fontStyle: "italic", color: T.green }}>Kids</em>
-          </SectionHeading>
-        </FadeIn>
-        <FadeIn delay={0.13}>
-          <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: T.muted, lineHeight: 1.8, marginBottom: 16 }}>
-            The Evening Madrasah at An-Nafa Academy is specially designed for children between the ages of 4 and 10. The program introduces essential Islamic knowledge in a way that is engaging, easy to understand and suitable for young learners.
-          </p>
-          <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: T.muted, lineHeight: 1.8 }}>
-            Our goal is to nurture love for Allah, the Qur'an and the teachings of the Prophet ﷺ while helping children develop strong Islamic character and manners. Children learn in a supportive environment guided by qualified teachers who focus on both knowledge and tarbiyyah.
-          </p>
-          <div style={{
-            borderLeft: `3px solid ${T.gold}`, marginTop: 28, padding: "16px 20px",
-            background: T.goldBg, borderRadius: "0 8px 8px 0",
-            fontFamily: fonts.arabic, fontSize: 18, color: T.gold,
-            direction: "rtl", fontStyle: "italic",
-          }}>
-            مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ
+      <div style={{ maxWidth: 960, margin: "0 auto" }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 28,
+          alignItems: "stretch",
+        }}>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <FadeIn><Eyebrow>About the Program</Eyebrow></FadeIn>
+            <FadeIn delay={0.07}>
+              <SectionHeading>
+                Evening Madrasah<br />for <em style={{ fontStyle: "italic", color: T.green }}>Kids</em>
+              </SectionHeading>
+            </FadeIn>
+            <FadeIn delay={0.13}>
+              <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: T.muted, lineHeight: 1.8, marginBottom: 16 }}>
+                At An-Nafa Academy, our Evening Madrasah is designed to give children authentic Islamic knowledge from an early age. We teach in a structured and engaging way so young learners can understand their Deen with clarity and confidence.
+              </p>
+              <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: T.muted, lineHeight: 1.8 }}>
+                Our classes focus on Qur'an reading, daily supplications, and core Islamic values while building adab and character. Through live guidance from caring teachers, children grow with a stronger Islamic identity and a lasting connection to Islam.
+              </p>
+            </FadeIn>
           </div>
-        </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div style={{
+              minHeight: 340,
+              borderRadius: 14,
+              overflow: "hidden",
+              border: `1px solid ${T.sand3}`,
+            }}>
+              <img
+                src="/Images/evening%20madrasah/kid_with_book_in_madrasa_mosque.jpg"
+                alt="Kid with book in madrasa mosque"
+                loading="lazy"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );
@@ -394,38 +411,159 @@ function Curriculum() {
   );
 }
 
-// ─── Why ──────────────────────────────────────────────────────────────────────
-const WHY = [
-  { n: "i", title: "Live Interactive Classes", body: "Children attend live sessions where they interact with teachers and actively participate — no pre-recordings." },
-  { n: "ii", title: "Trained Teachers for Kids", body: "Our teachers are experienced in teaching young children and use engaging, age-appropriate methods." },
-  { n: "iii", title: "Authentic Curriculum", body: "Lessons are based on the Qur'an and authentic Sunnah according to the understanding of the Salaf-us-Saliheen." },
-  { n: "iv", title: "Small Class Groups", body: "Limited class sizes allow teachers to give proper individual attention to every student." },
-  { n: "v", title: "Structured Learning", body: "Lessons follow a progressive structure so children build knowledge step by step with weekly tests." },
-  { n: "vi", title: "Focus on Tarbiyyah", body: "We focus on nurturing good character, Islamic manners and genuine love for the Deen." },
+const BOOK_TOPICS = [
+  "Daily supplications",
+  "Morning and evening adhkar",
+  "Tawheed and the Names of Allah",
+  "Pillars of Islam and Pillars of Eeman",
+  "Stories from the Qur'an",
+  "Ahadees and Seerah of Prophet Muhammad ﷺ",
+  "Islamic manners and Sunnah acts",
+  "Lessons from the Qur'an",
 ];
 
-function Why() {
+function IslamicBooks() {
+  return (
+    <section style={{ background: T.white, padding: `72px ${PAGE_X}` }}>
+      <div style={{ maxWidth: 960, margin: "0 auto" }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 28,
+          alignItems: "stretch",
+        }}>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <FadeIn><Eyebrow>Our Academy Islamic Books</Eyebrow></FadeIn>
+            <FadeIn delay={0.07}>
+              <SectionHeading>
+                Academy-Designed<br /><em style={{ fontStyle: "italic", color: T.green }}>Islamic Learning Books</em>
+              </SectionHeading>
+            </FadeIn>
+            <FadeIn delay={0.13}>
+              <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: T.muted, lineHeight: 1.8 }}>
+                An-Nafa Academy develops its own Islamic learning books to meet the needs of children at different stages. These books provide a clear and structured syllabus that makes important Islamic concepts easy to understand.
+              </p>
+              <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: T.muted, lineHeight: 1.8, marginTop: 14 }}>
+                Currently, these books are provided in digital PDF format for enrolled students.
+              </p>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.1}>
+            <div style={{
+              minHeight: 280,
+              borderRadius: 14,
+              overflow: "hidden",
+              border: `1px solid ${T.sand3}`,
+            }}>
+              <img
+                src="/Images/evening%20madrasah/kids_books.jpg"
+                alt="Our Academy Islamic Books"
+                loading="lazy"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.16}>
+          <h3 style={{
+            marginTop: 36,
+            marginBottom: 16,
+            fontFamily: fonts.serif,
+            fontSize: 28,
+            color: T.ink,
+            letterSpacing: "-0.3px",
+          }}>
+            Topics Covered in the Books
+          </h3>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 1,
+            background: T.sand3,
+            border: `1px solid ${T.sand3}`,
+            borderRadius: 14,
+            overflow: "hidden",
+          }}>
+            {BOOK_TOPICS.map((topic, i) => (
+              <div key={topic} style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: 12,
+                padding: "18px 18px",
+                background: T.sand,
+                fontFamily: fonts.sans,
+                fontSize: 14,
+                color: T.ink,
+                lineHeight: 1.45,
+              }}>
+                <span style={{
+                  width: 26,
+                  height: 26,
+                  borderRadius: "50%",
+                  background: T.greenBg,
+                  border: `1.5px solid ${T.green}`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontFamily: fonts.sans,
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: T.green,
+                  flexShrink: 0,
+                  marginTop: 1,
+                }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {topic}
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+// ─── Testimonials ────────────────────────────────────────────────────────────
+const TESTIMONIALS = [
+  {
+    name: "Parent from Abu Dhabi",
+    quote: "My daughter has become more confident in reading Qur'an, and we can clearly see improvement in her manners and daily adhkar.",
+  },
+  {
+    name: "Parent from Bengaluru",
+    quote: "The teachers are patient and professional. The classes are structured, and my son now looks forward to his Islamic lessons every evening.",
+  },
+  {
+    name: "Parent from Doha",
+    quote: "What we value most is the authentic approach. The lessons are simple for children yet firmly based on Qur'an and Sunnah.",
+  },
+];
+
+function Testimonials() {
   return (
     <section style={{ background: T.ink, padding: `72px ${PAGE_X}` }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <FadeIn><Eyebrow>Why An-Nafa</Eyebrow></FadeIn>
+      <div style={{ maxWidth: 960, margin: "0 auto" }}>
+        <FadeIn><Eyebrow>Parent Testimonials</Eyebrow></FadeIn>
         <FadeIn delay={0.07}>
           <SectionHeading light>
-            Why parents trust<br />An-Nafa Academy
+            What parents say<br />about An-Nafa Academy
           </SectionHeading>
         </FadeIn>
         <FadeIn delay={0.13}>
           <p style={{ fontFamily: fonts.body, fontSize: 16, fontWeight: 300, color: "rgba(255,255,255,0.4)", lineHeight: 1.8, marginBottom: 40 }}>
-            Our classes combine authentic Islamic teachings with a supportive, structured environment designed specifically for young children.
+            Families trust our Evening Madrasah because their children are learning authentic Islamic knowledge in a caring and structured environment.
           </p>
         </FadeIn>
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: 1, background: "rgba(255,255,255,0.06)",
           borderRadius: 14, overflow: "hidden",
         }}>
-          {WHY.map((w, i) => (
-            <FadeIn key={w.n} delay={i * 0.05}>
+          {TESTIMONIALS.map((item, i) => (
+            <FadeIn key={item.name} delay={i * 0.06}>
               <div style={{
                 background: T.ink2, padding: "28px 26px",
                 transition: "background 0.2s", cursor: "default",
@@ -433,9 +571,15 @@ function Why() {
                 onMouseEnter={e => e.currentTarget.style.background = "#1d2435"}
                 onMouseLeave={e => e.currentTarget.style.background = T.ink2}
               >
-                <div style={{ fontFamily: fonts.serif, fontSize: 13, color: "rgba(184,130,15,0.4)", fontStyle: "italic", marginBottom: 12 }}>{w.n}</div>
-                <div style={{ fontFamily: fonts.sans, fontSize: 15, fontWeight: 600, color: T.white, marginBottom: 8 }}>{w.title}</div>
-                <div style={{ fontFamily: fonts.body, fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.38)", lineHeight: 1.65 }}>{w.body}</div>
+                <div style={{ fontFamily: fonts.serif, fontSize: 26, color: "rgba(184,130,15,0.45)", lineHeight: 1, marginBottom: 10 }}>
+                  “
+                </div>
+                <div style={{ fontFamily: fonts.body, fontSize: 14, fontWeight: 300, color: "rgba(255,255,255,0.46)", lineHeight: 1.75, marginBottom: 16 }}>
+                  {item.quote}
+                </div>
+                <div style={{ fontFamily: fonts.sans, fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.78)" }}>
+                  {item.name}
+                </div>
               </div>
             </FadeIn>
           ))}
@@ -903,10 +1047,10 @@ export default function AnNafaAdmissions() {
         <Hero formRef={formRef} />
         <About />
         <Curriculum />
-        <Why />
+        <IslamicBooks />
+        <Testimonials />
         <ProgramDetails />
         <AdmissionForm sectionRef={formRef} />
-        <LimitedSeats />
         <FAQ />
         <FinalCTA />
       </div>
